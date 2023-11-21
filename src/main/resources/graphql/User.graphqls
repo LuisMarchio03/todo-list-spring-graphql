@@ -1,0 +1,16 @@
+type User {
+    id: ID!
+    name: String!
+    email: String!
+    tasks(status: String): [Task]
+}
+
+type Query {
+    allUsers: [User]
+    findByEmail(email: String!): User
+    findById(id: ID!): User
+}
+
+type Mutation {
+    addUser(name: String!, email: String!): User!
+}
