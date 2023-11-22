@@ -1,0 +1,54 @@
+{
+  "data": {
+    "__schema": {
+      "queryType": {
+        "name": "Query",
+        "fields": [
+          {
+            "name": "allUsers",
+            "type": {
+              "name": "UserConnection"
+            }
+          }
+        ]
+      },
+      "mutationType": {
+        "name": "Mutation",
+        "fields": [
+          {
+            "name": "addUser",
+            "type": {
+              "name": "User"
+            }
+          }
+        ]
+      },
+      "types": [
+        {
+          "kind": "OBJECT",
+          "name": "User",
+          "fields": [
+            {
+              "name": "id",
+              "type": {
+                "name": "ID"
+              }
+            },
+            {
+              "name": "name",
+              "type": {
+                "name": "String"
+              }
+            },
+            {
+              "name": "email",
+              "type": {
+                "name": "String"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

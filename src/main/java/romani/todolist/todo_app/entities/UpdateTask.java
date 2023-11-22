@@ -1,11 +1,13 @@
 package romani.todolist.todo_app.entities;
 
-
+// UpdateTask: classe que representa uma tarefa que será atualizada
 public class UpdateTask {
 
+    // Atributos
     private String description;
     private String id;
 
+    // Construtores: métodos que são executados quando a classe é instanciada
     public UpdateTask(String description, String id) {
         this.description = description;
         this.id = id;
@@ -14,6 +16,7 @@ public class UpdateTask {
     public UpdateTask() {
     }
 
+    // Getters e Setters: métodos que permitem acessar e modificar os atributos
     public String getDescription() {
         return description;
     }
