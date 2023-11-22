@@ -4,7 +4,6 @@ import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import romani.todolist.todo_app.entities.Task;
-import romani.todolist.todo_app.entities.UpdateTask;
 import romani.todolist.todo_app.repositories.TaskRepository;
 
 import java.util.Optional;
@@ -51,21 +50,29 @@ public class TaskMutations implements GraphQLMutationResolver {
     // UpdateTask: Metodos que permite atualizar uma tarefa
     // updateTask: nome do método
     // UpdateTask updateTask: parâmetro do método
-    public Task updateTask(UpdateTask updateTask) {
+    public Task updateTask(String title, String description, String status, String taskId) {
         // Optional<Task>: tipo de retorno do método
-        // taskRepository.findById(updateTask.getId()): método que permite buscar uma
-        // tarefa a partir do id
-        Optional<Task> optional = taskRepository.findById(updateTask.getId());
-        // optional.isPresent(): método que permite verificar se a tarefa foi encontrada
-        if (!optional.isPresent()) {
-            throw new RuntimeException("Não achamos a task");
+        // taskRepository.findById(taskId): método que permite buscar uma tarefa a
+        // partir do id
+        Optional<Task> optionalTask = taskRepository.findById(taskId);
+
+        // optionalTask.isPresent(): método que verifica se a tarefa existe
+        if (optionalTask.isPresent()) {
+            // Task task: permite criar uma instância da classe Task
+            Task task = optionalTask.get();
+
+            // task.setTitle(title): método que permite atualizar o título de uma tarefa
+            // task.setDescription(description): método que permite atualizar a descrição
+            // de uma tarefa
+            // task.setStatus(status): método que permite atualizar o status de uma tarefa
+            task.setTitle(title).setDescription(description).setStatus(status);
+
+            // taskRepository.save(task): método que permite salvar uma tarefa no banco de
+            // dados
+            return taskRepository.save(task);
         }
 
-        // Task task = optional.get(): método que permite obter a tarefa
-        Task task = optional.get();
-        // updateTask.getDescription(): método que permite obter a descrição da tarefa
-        task.setDescription(updateTask.getDescription());
-        // taskRepository.save(task): método que permite salvar uma tarefa no banco de
-        return taskRepository.save(task);
+        // null: valor de retorno caso a tarefa não exista
+        return null;
     }
 }

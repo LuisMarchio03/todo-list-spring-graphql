@@ -1,21 +1,31 @@
 type Task {
-    id: ID!
-    user: User!
-    title: String!
-    description: String!
-    status: String!
+  id: ID!
+  user: User!
+  title: String!
+  description: String!
+  status: String!
 }
 
 input UpdateTask {
-    id: ID!
-    description: String!
+  id: ID!
+  description: String!
 }
 
 extend type Query {
-    allTasks: [Task]
+  allTasks: [Task]
 }
 
 extend type Mutation {
-    addTask(title: String!, description: String!, status: String!, userId: String!): Task!
-    updateTask(task: UpdateTask!): Task!
+  addTask(
+    title: String!
+    description: String!
+    status: String!
+    userId: String!
+  ): Task!
+  updateTask(
+    title: String!
+    description: String!
+    status: String!
+    taskId: String!
+  ): Task!
 }
