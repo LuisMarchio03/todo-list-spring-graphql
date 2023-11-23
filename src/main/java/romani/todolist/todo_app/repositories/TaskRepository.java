@@ -16,6 +16,10 @@ public interface TaskRepository extends CrudRepository<Task, String> {
     // findAllByUserId: metodos que permite buscar todas as tarefas de um usuário
     Iterable<Task> findAllByUserId(String userId);
 
+    // findAllByCategoryId: metodos que permite buscar todas as tarefas de uma
+    // categoria
+    Iterable<Task> findAllByCategoryId(String categoryId);
+
     // Iterable<Task>: tipo de retorno do método
     // findAllByUserIdAndStatus: nome do método
     // String userId: primeiro parâmetro do método
@@ -23,4 +27,8 @@ public interface TaskRepository extends CrudRepository<Task, String> {
     // findAllByUserIdAndStatus: metodos que permite buscar todas as tarefas de um
     // usuário a partir de um status
     Iterable<Task> findAllByUserIdAndStatus(String userId, String status);
+
+    // findAllByCategoryIdAndStatus: metodos que permite buscar todas as tarefas de
+    // uma categoria a partir de um status
+    Iterable<Task> findAllByCategoryIdAndStatus(String categoryId, String status);
 }
