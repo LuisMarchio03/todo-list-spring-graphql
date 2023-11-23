@@ -1,10 +1,8 @@
-package luismarchio.todolist.todo_app.resolvers;
+package luismarchio.todolist.todo_app.user;
 
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import luismarchio.todolist.todo_app.entities.User;
-import luismarchio.todolist.todo_app.repositories.UserRepository;
 
 // @Service: anotação que indica que a classe é um serviço
 // Serviço: classe que permite realizar operações no banco de dados

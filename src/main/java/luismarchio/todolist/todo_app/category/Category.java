@@ -1,8 +1,11 @@
-package luismarchio.todolist.todo_app.entities;
+package luismarchio.todolist.todo_app.category;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import luismarchio.todolist.todo_app.task.Task;
+import luismarchio.todolist.todo_app.user.User;
 
 @Document
 public class Category {

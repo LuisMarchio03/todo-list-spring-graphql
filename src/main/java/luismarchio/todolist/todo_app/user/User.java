@@ -1,8 +1,11 @@
-package luismarchio.todolist.todo_app.entities;
+package luismarchio.todolist.todo_app.user;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import luismarchio.todolist.todo_app.category.Category;
+import luismarchio.todolist.todo_app.task.Task;
 
 // @Document: anotação que indica que a classe é um documento do MongoDB (Ou seja, uma entidade)
 // User: nome da coleção no MongoDB

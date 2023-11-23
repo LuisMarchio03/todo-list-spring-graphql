@@ -1,12 +1,9 @@
-package luismarchio.todolist.todo_app.resolvers;
+package luismarchio.todolist.todo_app.category;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
-
-import luismarchio.todolist.todo_app.entities.Category;
-import luismarchio.todolist.todo_app.repositories.CategoryRepository;
 
 @Service
 public class CategoryQueries implements GraphQLQueryResolver {

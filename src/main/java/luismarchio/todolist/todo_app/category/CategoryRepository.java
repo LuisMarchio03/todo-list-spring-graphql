@@ -1,8 +1,7 @@
-package luismarchio.todolist.todo_app.repositories;
+package luismarchio.todolist.todo_app.category;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import luismarchio.todolist.todo_app.entities.Category;
 
 // @Repository: anotação que indica que a classe é um repositório
 // Repositório: classe que permite realizar operações no banco de dados
