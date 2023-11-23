@@ -1,6 +1,7 @@
 type Task {
   id: ID!
   user: User!
+  category: Category!
   title: String!
   description: String!
   status: String!
@@ -21,6 +22,7 @@ extend type Mutation {
     description: String!
     status: String!
     userId: String!
+    categoryId: String!
   ): Task!
   updateTask(
     title: String!
