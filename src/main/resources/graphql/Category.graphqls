@@ -1,0 +1,15 @@
+type Category {
+  id: ID!
+  name: String!
+  description: String
+  color: String
+  status: String
+  user: User!
+  tasks: [Task]
+  # tasks(status: String): [Task]
+}
+
+extend type Query {
+  allCategories: [Category]
+  findCategoryById(id: ID!): Category
+}
