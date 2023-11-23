@@ -3,8 +3,11 @@ package romani.todolist.todo_app.resolvers;
 import com.coxautodev.graphql.tools.GraphQLResolver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import romani.todolist.todo_app.entities.Category;
 import romani.todolist.todo_app.entities.Task;
 import romani.todolist.todo_app.entities.User;
+import romani.todolist.todo_app.repositories.CategoryRepository;
 import romani.todolist.todo_app.repositories.TaskRepository;
 
 // @Service: anotação que indica que a classe é um serviço
@@ -16,14 +19,16 @@ public class UserResolver implements GraphQLResolver<User> {
 
     // Injeção de dependência: mecanismo que permite que uma classe receba
     private TaskRepository taskRepository;
+    private CategoryRepository categoryRepository;
 
     // @Autowired: anotação que indica que o atributo será injetado pelo Spring
     // UserResolver: nome do construtor
     // TaskRepository taskRepository: parâmetro do construtor
     // this.taskRepository = taskRepository: atributo que será injetado pelo Spring
     @Autowired
-    public UserResolver(TaskRepository taskRepository) {
+    public UserResolver(TaskRepository taskRepository, CategoryRepository categoryRepository) {
         this.taskRepository = taskRepository;
+        this.categoryRepository = categoryRepository;
     }
 
     // getTasks: método que permite buscar todas as tarefas de um usuário
@@ -40,5 +45,15 @@ public class UserResolver implements GraphQLResolver<User> {
             return taskRepository.findAllByUserId(user.getId());
         }
         return taskRepository.findAllByUserIdAndStatus(user.getId(), status);
+    }
+
+    // getCategories: método que permite buscar todas as categorias de um usuário
+    // Iterable<Category>: tipo de retorno do método
+    // getCategories: nome do método
+    // User user: parâmetro do método
+    public Iterable<Category> getCategories(User user) {
+        // categoryRepository.findAllByUserId(user.getId()): método que permite buscar
+        // todas as categorias de um usuário
+        return categoryRepository.findAllCategoriesByUserId(user.getId());
     }
 }
