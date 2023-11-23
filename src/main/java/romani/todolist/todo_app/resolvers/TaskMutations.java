@@ -38,9 +38,9 @@ public class TaskMutations implements GraphQLMutationResolver {
     // String description: segundo parâmetro do método
     // String status: terceiro parâmetro do método
     // String userId: quarto parâmetro do método
-    public Task addTask(String title, String description, String status, String userId) {
+    public Task addTask(String title, String description, String status, String userId, String categoryId) {
         // Task: Permite criar uma instância da classe Task
-        Task task = new Task(title, description, status, userId);
+        Task task = new Task(title, description, status, userId, categoryId);
 
         // taskRepository.save(task): método que permite salvar uma tarefa no banco de
         // dados
