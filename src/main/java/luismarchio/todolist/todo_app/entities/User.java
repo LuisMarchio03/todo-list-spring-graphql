@@ -1,4 +1,4 @@
-package romani.todolist.todo_app.entities;
+package luismarchio.todolist.todo_app.entities;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;

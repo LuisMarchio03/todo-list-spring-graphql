@@ -1,10 +1,10 @@
-package romani.todolist.todo_app.resolvers;
+package luismarchio.todolist.todo_app.resolvers;
 
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import romani.todolist.todo_app.entities.Task;
-import romani.todolist.todo_app.repositories.TaskRepository;
+import luismarchio.todolist.todo_app.entities.Task;
+import luismarchio.todolist.todo_app.repositories.TaskRepository;
 
 import java.util.Optional;
 

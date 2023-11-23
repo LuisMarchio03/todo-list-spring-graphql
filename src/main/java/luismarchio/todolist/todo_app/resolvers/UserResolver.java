@@ -1,14 +1,14 @@
-package romani.todolist.todo_app.resolvers;
+package luismarchio.todolist.todo_app.resolvers;
 
 import com.coxautodev.graphql.tools.GraphQLResolver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import romani.todolist.todo_app.entities.Category;
-import romani.todolist.todo_app.entities.Task;
-import romani.todolist.todo_app.entities.User;
-import romani.todolist.todo_app.repositories.CategoryRepository;
-import romani.todolist.todo_app.repositories.TaskRepository;
+import luismarchio.todolist.todo_app.entities.Category;
+import luismarchio.todolist.todo_app.entities.Task;
+import luismarchio.todolist.todo_app.entities.User;
+import luismarchio.todolist.todo_app.repositories.CategoryRepository;
+import luismarchio.todolist.todo_app.repositories.TaskRepository;
 
 // @Service: anotação que indica que a classe é um serviço
 // Serviço: classe que permite realizar operações no banco de dados
