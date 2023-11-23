@@ -13,3 +13,13 @@ extend type Query {
   allCategories: [Category]
   findCategoryById(id: ID!): Category
 }
+
+extend type Mutation {
+  addCategory(
+    name: String!
+    description: String
+    color: String
+    status: String
+    userId: String!
+  ): Category!
+}
