@@ -16,8 +16,9 @@ public class Task {
     private String id;
     private String title;
     private String description;
-    private String status;
+    private String status; // finished = true, unfinished = false
     private String userId;
+    private String categoryId;
 
     // @Transient: anotação que indica que o atributo não será persistido no banco
     // de dados
@@ -25,12 +26,19 @@ public class Task {
     @Transient
     private User user;
 
+    // @Transient: anotação que indica que o atributo não será persistido no banco
+    // de dados
+    // Category: tipo do atributo -> Retorna a categoria que está associada a tarefa
+    @Transient
+    private Category category;
+
     // Construtor: método que é executado quando a classe é instanciada
-    public Task(String title, String description, String status, String userId) {
+    public Task(String title, String description, String status, String userId, String categoryId) {
         this.title = title;
         this.description = description;
         this.status = status;
         this.userId = userId;
+        this.categoryId = categoryId;
     }
 
     // Getters e Setters: métodos que permitem acessar e modificar os atributos
@@ -79,12 +87,30 @@ public class Task {
         return this;
     }
 
+    public String getCategoryId() {
+        return categoryId;
+    }
+
+    public Task setCategoryId(String categoryId) {
+        this.categoryId = categoryId;
+        return this;
+    }
+
     public User getUser() {
         return user;
     }
 
     public Task setUser(User user) {
         this.user = user;
+        return this;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public Task setCategory(Category category) {
+        this.category = category;
         return this;
     }
 }
