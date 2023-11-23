@@ -19,6 +19,8 @@ public class User {
     private String email;
     @Transient
     private Iterable<Task> tasks;
+    @Transient
+    private Iterable<Category> categories;
 
     // Construtores: métodos que são executados quando a classe é instanciada
     public User(String name, String email) {
