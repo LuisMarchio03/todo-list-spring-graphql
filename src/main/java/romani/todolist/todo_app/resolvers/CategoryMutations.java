@@ -28,7 +28,7 @@ public class CategoryMutations implements GraphQLMutationResolver {
     }
 
     // addCategory: método que permite adicionar um usuário
-    // Category: tipo de retorno do método Rddasdasdas
+    // Category: tipo de retorno do método
     // addCategory: nome do método
     // String name: primeiro parâmetro do método
     // String email: segundo parâmetro do método
